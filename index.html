@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Toastify -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- META TAG OG -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Dev Burguer - O melhor hambúrguer dev!"
+    />
+    <meta
+      property="og:image"
+      content="https://projeto-cardapio-wine.vercel.app/assets/hamb-1.png"
+    />
+    <meta
+      property="og:description"
+      content="O melhor hambúrguer caseiro de verdade!"
+    />
+    <meta property="og:site_name" content="DevBurguer" />
+
+    <link rel="stylesheet" href="./assets/styles/output.css" />
+
+    <link
+      rel="shortcut icon"
+      href="./assets/images/hamb-1.png"
+      type="image/x-icon"
+    />
+
+    <title>Dev Burguer | A melhor hamburgueria dev!</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center">
+      <div class="w-full h-full flex flex-col justify-center items-center">
+        <img
+          src="./assets/images/hamb-1.png"
+          alt="Logo DevBurguer"
+          class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200"
+        />
+        <h1 class="text-4xl mt-4 mb-2 font-bold text-white">Dev Burguer</h1>
+
+        <span class="text-white font-medium">
+          <i class="fa-solid fa-location-dot text-red-600"></i>
+          Rua João Ferreira de Souza, 102, Baía Formosa - RN
+        </span>
+
+        <span class="text-white font-medium">
+          <i class="fa-solid fa-phone text-green-600"></i>
+          Telefone:
+          <a
+            class="hover:text-green-600"
+            href="https://api.whatsapp.com/send?phone=5584994762432&text=Olá,%20quero%20fazer%20um%20pedido!"
+            target="_blank"
+            >(84) 99999-9999
+          </a>
+        </span>
+
+        <span class="text-white font-medium">
+          <i class="fa-solid fa-clock text-yellow-500"></i>
+          Horário de funcionamento
+        </span>
+
+        <div class="bg-green-600 px-4 py-1 rounded-lg mt-5" id="date-span">
+          <span class="text-white font-medium">Seg á Dom - 18:00 as 22:00</span>
+        </div>
+      </div>
+    </header>
+    <!-- FIM HEADER -->
+
+    <!-- TITULO MENU -->
+    <h2 class="text-2xl md:text-3xl font-bold text-center mt-9 mb-6">
+      Conheça nosso menu
+    </h2>
+    <!-- TITULO MENU -->
+
+    <div class="mx-auto max-w-7xl px-2 my-2">
+      <h2 class="font-bold text-3xl">Hamburgues</h2>
+    </div>
+
+    <!-- INICIO MENU -->
+    <div id="menu">
+      <main
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+      >
+        <!-- PRODUTO ITEM 01 -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/images/hamb-1.png"
+            alt="Hambúrguer Deluxe"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Hambúrguer Deluxe</p>
+            <p class="text-sm">
+              Pão macio de brioche, com pão de hambúrguer artesanal de 200g de
+              carne bovina, queijo cheddar derretido, queijo muçarela, bacon
+              crocante, alface, tomate, picles, maionese especial e molho
+              barbecue.
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$: 39,90</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn hover:bg-gray-800 cursor-pointer"
+                data-name="Hambúrguer Deluxe"
+                data-price="39.90"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM 02 -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/images/hamb-2.png"
+            alt="Cheddar Bacon Burger"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Cheddar Bacon Burger</p>
+            <p class="text-sm">
+              Pão de brioche, hambúrguer artesanal de 180g, queijo cheddar
+              derretido, fatias de bacon crocante e molho especial. Acompanha
+              batatas-fritas crocantes.
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$: 34,90</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn hover:bg-gray-800 cursor-pointer"
+                data-name="Cheddar Bacon Burger"
+                data-price="34.90"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM 03 -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/images/hamb-3.png"
+            alt="Cheeseburger Clássico"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Cheeseburger Clássico</p>
+            <p class="text-sm">
+              Pão de pão tradicional, hambúrguer artesanal de 180g, queijo
+              cheddar derretido, queijo muçarela, hambúrguer duplo, tudo
+              envolvido em um pão especial, com molho barbecue e cebola
+              crocante.
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$: 29,90</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn hover:bg-gray-800 cursor-pointer"
+                data-name="Cheeseburger Clássico"
+                data-price="29.90"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM 04 -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/images/hamb-4.png"
+            alt="Hambúrguer de Frango Tropical"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div>
+            <p class="font-bold">Hambúrguer de Frango Tropical</p>
+            <p class="text-sm">
+              Pão com gergelim, filé de frango empanado, queijo derretido,
+              alface, tomate, cebola roxa, picles e maionese de hortelã.
+              Acompanha batatas rústicas.
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$: 28,90</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn hover:bg-gray-800 cursor-pointer"
+                data-name="Hambúrguer de Frango Tropical"
+                data-price="28.90"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM PRODUTO ITEM -->
+
+        <!-- PRODUTO ITEM 05 -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/images/hamb-5.png"
+            alt="Burger Especial de Queijo com Salada"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 cursor-pointer"
+          />
+
+          <div class="">
+            <p class="font-bold">Burger Especial de Queijo com Salada</p>
+
+            <p class="text-sm">
+              Pão australiano, hambúrguer artesanal de carne, queijo derretido,
+              alface, tomate, cebola e maionese caseira. Perfeito para quem
+              busca sabor e equilíbrio.
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$: 27,90</p>
+
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn hover:bg-gray-800 cursor-pointer"
+                data-name="Burger Especial de Queijo com Salada"
+                data-price="27.90"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PRODUTO ITEM 05 -->
+
+        <!-- PRODUTO ITEM 06 -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/images/hamb-6.png"
+            alt="Cheeseburger com Cebola e Bacon"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 cursor-pointer"
+          />
+
+          <div class="">
+            <p class="font-bold">Cheeseburger com Cebola e Bacon</p>
+
+            <p class="text-sm">
+              Pão de hambúrguer, hambúrguer artesanal de 180g, queijo cheddar
+              derretido, cebolas roxas, molho barbecue, bacon crocante, alface e
+              tomate fresco. Acompanha batatas fritas crocantes.
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$: 32,90</p>
+
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn hover:bg-gray-800 cursor-pointer"
+                data-name="Cheeseburger com Cebola e Bacon"
+                data-price="32.90"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PRODUTO ITEM 06 -->
+
+        <!-- PRODUTO ITEM 07 -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/images/hamb-7.png"
+            alt="Hambúrguer Feijoada"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 cursor-pointer"
+          />
+
+          <div class="">
+            <p class="font-bold">Hambúrguer Feijoada</p>
+
+            <p class="text-sm">
+              Pão de pão macio, hambúrguer artesanal de 180g, queijo cheddar,
+              feijão preto temperado, bacon crocante, cebolas caramelizadas e
+              últimas pontadas de molho barbecue. Acompanha onion rings.
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$: 34.90</p>
+
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn hover:bg-gray-800 cursor-pointer"
+                data-name="Hambúrguer Feijoada"
+                data-price="34.90"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PRODUTO ITEM 07 -->
+
+        <!-- PRODUTO ITEM 08 -->
+        <div class="flex gap-2">
+          <img
+            src="./assets/images/hamb-8.png"
+            alt="Sanduíche Veggie Gourmet"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300 cursor-pointer"
+          />
+
+          <div class="">
+            <p class="font-bold">Sanduíche Veggie Gourmet</p>
+
+            <p class="text-sm">
+              Pão brioche, patê de ervas, hambúrguer de vegetais, creme de
+              abacate, cenoura ralada, beterraba em tiras, folhas verdes frescas
+              e molho especial. Perfeito para um sabor leve e nutritivo.
+            </p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$: 25,90</p>
+
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn hover:bg-gray-800 cursor-pointer"
+                data-name="Sanduíche Veggie Gourmet"
+                data-price="25.90"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- PRODUTO ITEM 08 -->
+      </main>
+
+      <div class="mx-auto max-w-7xl px-2 my-2">
+        <h2 class="font-bold text-3xl">Bebidas</h2>
+      </div>
+
+      <!-- GRID BEBIDAS -->
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16"
+        id="menu"
+      >
+        <!-- BEBIDA ITEM 01 -->
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/images/refri-1.png"
+            alt="Coca lata"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div class="w-full">
+            <p class="font-bold">Coca lata</p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$: 5,99</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn hover:bg-gray-800 cursor-pointer"
+                data-name="Coca lata"
+                data-price="5.99"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM BEBIDA ITEM 01 -->
+
+        <!-- BEBIDA ITEM 02 -->
+        <div class="flex gap-2 w-full">
+          <img
+            src="./assets/images/refri-2.png"
+            alt="Guaraná lata"
+            class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300"
+          />
+
+          <div class="w-full">
+            <p class="font-bold">Guaraná lata</p>
+
+            <div class="flex items-center gap-2 justify-between mt-3">
+              <p class="font-bold text-lg">R$: 5,99</p>
+              <button
+                class="bg-gray-900 px-5 rounded add-to-cart-btn hover:bg-gray-800 cursor-pointer"
+                data-name="Guarana lata"
+                data-price="5.99"
+              >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- FIM BEBIDA ITEM 02 -->
+      </div>
+      <!-- FIM GRID BEBIDAS -->
+    </div>
+    <!-- FIM MENU -->
+
+    <!-- MODAL CART -->
+    <div
+      class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+      id="cart-modal"
+    >
+      <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+        <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
+
+        <div
+          id="cart-items"
+          class="flex justify-between mb-2 flex-col max-h-[400px] overflow-auto"
+        ></div>
+
+        <p class="font-bold">Total: <span id="cart-total">00.00</span></p>
+
+        <p class="font-bold mt-4">Endereço de entrega:</p>
+        <input
+          type="text"
+          placeholder="Digite seu endereço completo..."
+          id="address"
+          class="w-full border-2 p-1 rounded my-1"
+        />
+        <p class="text-red-500 hidden" id="address-warn">
+          Digite seu endereço completo!
+        </p>
+
+        <div class="flex items-center justify-between mt-5 w-full">
+          <button
+            id="close-modal-btn"
+            class="bg-yellow-500 hover:bg-yellow-600 text-white px-4 py-1 rounded cursor-pointer"
+          >
+            Fechar
+          </button>
+          <button
+            id="checkout-btn"
+            class="bg-green-500 hover:bg-green-600 text-white px-4 py-1 rounded cursor-pointer"
+          >
+            Finalizar pedido
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- FIM MODAL CART -->
+
+    <!-- BUTTON CART FOOTER -->
+    <footer
+      class="w-full bg-red-500 py-3 fixed bottom-0 z-40 flex items-center justify-center"
+    >
+      <button
+        class="flex items-center gap-2 text-white font-bold cursor-pointer"
+        id="cart-btn"
+      >
+        (<span id="cart-count">0</span>) Veja meu carrinho
+        <i class="fa fa-cart-plus text-lg text-white"></i>
+      </button>
+    </footer>
+    <!-- FIM BUTTON CART FOOTER -->
+
+    <!-- Toastify -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

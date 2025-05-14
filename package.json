@@ -1,0 +1,16 @@
+{
+  "name": "cardapio",
+  "version": "1.0.0",
+  "description": "![Logo do projeto](https://i.imgur.com/kniMQHu.png)",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx @tailwindcss/cli -i ./assets/styles/style.css -o ./assets/styles/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.4",
+    "tailwindcss": "^4.1.4"
+  }
+}
