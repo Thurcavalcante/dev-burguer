@@ -79,13 +79,19 @@ function updateCartModal() {
           <p class="font-medium mt-2">R$ ${item.price.toFixed(2)}</p>
         </div>
 
+        <div class="flex gap-2">
+          <button 
+            class="add-from-cart-btn bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded cursor-pointer"
+            data-name="${item.name}">
+            Adicionar
+          </button>
 
-        <button class="remove-from-cart-btn bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded cursor-pointer" data-name="${
-          item.name
-        }">
-          Remover
-        </button>
-
+          <button 
+            class="remove-from-cart-btn bg-red-500 hover:bg-red-600 text-white px-4 py-1 rounded cursor-pointer" 
+            data-name="${item.name}">
+            Remover
+          </button>
+        </div>
       </div>
     `;
 
@@ -104,10 +110,14 @@ function updateCartModal() {
 
 // Função para remover o item do carrinho
 cartItemsContainer.addEventListener("click", function (event) {
-  if (event.target.classList.contains("remove-from-cart-btn")) {
-    const name = event.target.getAttribute("data-name");
+  const name = event.target.getAttribute("data-name");
 
+  if (event.target.classList.contains("remove-from-cart-btn")) {
     removeItemCart(name);
+  }
+
+  if (event.target.classList.contains("add-from-cart-btn")) {
+    addItemCart(name);
   }
 });
 
@@ -125,6 +135,16 @@ function removeItemCart(name) {
     }
 
     cart.splice(index, 1);
+    updateCartModal();
+  }
+}
+
+// Função para adicionar mais um item no carrinho
+function addItemCart(name) {
+  const item = cart.find((item) => item.name === name);
+
+  if (item) {
+    item.quantity += 1;
     updateCartModal();
   }
 }
