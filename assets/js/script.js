@@ -165,21 +165,52 @@ checkoutBtn.addEventListener("click", function () {
     return;
   }
 
-  //Enviar o pedido para api whats
+  // Enviar o pedido para api whats
+  // const cartItems = cart
+  //   .map((item) => {
+  //     return `${item.name}\n • Quantidade: ${
+  //       item.quantity
+  //     }\n • Preço: R$ ${item.price.toFixed(2)}\n`;
+  //   })
+  //   .join("\n");
+
+  // const message = encodeURIComponent(cartItems);
+  // const phone = "5584994762432"; // 5584999999999
+
+  // window.open(
+  //   `https://wa.me/${phone}?text=${message}\n Endereço: ${addressInput.value}`,
+  //   "_blank"
+  // );
+
+  // NOVO Enviar o pedido para api whats
   const cartItems = cart
     .map((item) => {
-      return ` ${item.name} Quantidade: (${item.quantity}) Preço: R$${item.price} |`;
+      return `${item.name}
+• Quantidade: ${item.quantity}
+• Preço: R$ ${item.price.toFixed(2)}
+`;
     })
-    .join("");
+    .join("\n");
 
-  const message = encodeURIComponent(cartItems);
-  const phone = "84994762432"; // 84 99999-9999
+  // reaproveita o total já exibido no carrinho
+  const total = cartTotal.textContent;
 
-  window.open(
-    `https://wa.me/${phone}?text=${message} Endereço: ${addressInput.value}`,
-    "_blank"
-  );
+  // reaproveita o endereço direto do input
+  const address = addressInput.value;
 
+  const fullMessage = `${cartItems}
+Total: ${total}
+
+Endereço:
+${address}
+`;
+
+  const phone = "5584994762432";
+  const encodedMessage = encodeURIComponent(fullMessage);
+
+  window.open(`https://wa.me/${phone}?text=${encodedMessage}`, "_blank");
+
+  // Limpar o carrinho após o pedido
   cart = [];
   updateCartModal();
 });
@@ -188,7 +219,7 @@ checkoutBtn.addEventListener("click", function () {
 function checkRestaurantOpen() {
   const data = new Date();
   const hora = data.getHours();
-  return hora >= 18 && hora < 22;
+  return hora >= 13 && hora < 22; // 18 às 22 hor3as
   //true = restaurante está aberto
 }
 
